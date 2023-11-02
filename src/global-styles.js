@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         --ff-primary:'Inter', sans-serif;
         
         --fw-reg:400;
+        --fw-500:500;
         --fw-bold:600;
         --fw-bolder:700;
         

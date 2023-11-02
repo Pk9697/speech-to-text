@@ -11,7 +11,7 @@ function MainPaneContainer() {
     <MainPane>
       <MainPane.Frame>
         <MainPane.TitleContainer>Welcome Shakirat</MainPane.TitleContainer>
-        <Button>Transcribe File</Button>
+        <Button $maxWidth="175px">Transcribe File</Button>
       </MainPane.Frame>
       <MainPane.Frame>
         <MainPane.Metrics>
