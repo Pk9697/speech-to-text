@@ -13,7 +13,7 @@ function SidePaneContainer() {
   return (
     <SidePane>
       <SidePane.Section>
-        <SidePane.Logo>abc firm</SidePane.Logo>
+        {/* <SidePane.Logo>abc firm</SidePane.Logo> */}
         <SidePane.Menu>
           <SidePane.MenuItem $selected>
             <SidePane.Icon>

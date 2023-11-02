@@ -1,3 +1,4 @@
+import MainPaneContainer from '../containers/MainPaneContainer'
 import SidePaneContainer from '../containers/SidePaneContainer'
 import SplitScreen from '../layoutComponents/splitScreen'
 
@@ -8,7 +9,7 @@ function Home() {
         <SidePaneContainer />
       </SplitScreen.Pane>
       <SplitScreen.Pane $weight={3}>
-        <h1>Main</h1>
+        <MainPaneContainer />
       </SplitScreen.Pane>
     </SplitScreen>
   )

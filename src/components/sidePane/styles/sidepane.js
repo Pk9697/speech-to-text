@@ -43,6 +43,7 @@ export const MenuItem = styled.div`
   padding: 0.75em 1em;
   gap: 0.75em;
   cursor: pointer;
+  border-radius: 0.25em;
 `
 
 export const Icon = styled.div`
