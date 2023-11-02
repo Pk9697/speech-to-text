@@ -19,12 +19,14 @@ const GlobalStyle = createGlobalStyle`
         --clr-blue:#0048AD;
         --clr-grey-50:#f9fafb;
         --clr-nav-icon:#f0f2f5;
-        --clr-metrics-border:#e4e7ec;
+        --clr-border:#e4e7ec;
         --clr-text:#344054;
         --clr-text-small:#475367;
         --clr-text-black:#101928;
         --clr-accent:#e0edff;
         --clr-metrics-text:#475367;
+        --clr-black:#000;
+        --clr-table:#404040;
         
         --fs-reg:0.875rem;
         --fs-small:0.75rem;

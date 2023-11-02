@@ -4,6 +4,7 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 
 import MainPane from '../components/mainPane'
 import Button from '../components/button'
+import TableContainer from './TableContainer'
 
 function MainPaneContainer() {
   return (
@@ -41,7 +42,9 @@ function MainPaneContainer() {
           </MainPane.MetricsGroup>
         </MainPane.Metrics>
       </MainPane.Frame>
-      <MainPane.Frame></MainPane.Frame>
+      <MainPane.Frame>
+        <TableContainer />
+      </MainPane.Frame>
     </MainPane>
   )
 }

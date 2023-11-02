@@ -32,7 +32,7 @@ export const Metrics = styled.div`
   padding: 1em;
   gap: 1em;
   border-radius: 12px;
-  border: 1px solid var(--clr-metrics-border);
+  border: 1px solid var(--clr-border);
   background: var(--clr-white);
 `
 
@@ -44,7 +44,7 @@ export const MetricsIcon = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  border: 1px solid var(--clr-metrics-border);
+  border: 1px solid var(--clr-border);
 `
 
 export const MetricsGroup = styled.div`

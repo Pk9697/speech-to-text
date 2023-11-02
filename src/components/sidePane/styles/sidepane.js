@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding: 1.5em;
   background-color: var(--clr-white);
   height: 100%;
+  max-height: 90vh;
 `
 
 export const Section = styled.div`
