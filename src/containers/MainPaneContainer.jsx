@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined'
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined'
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined'
@@ -5,13 +6,18 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import MainPane from '../components/mainPane'
 import Button from '../components/button'
 import TableContainer from './TableContainer'
+import { ModalContext } from '../context/modalContext'
 
 function MainPaneContainer() {
+  const { setIsOpenModal } = useContext(ModalContext)
+
   return (
     <MainPane>
       <MainPane.Frame>
         <MainPane.TitleContainer>Welcome Shakirat</MainPane.TitleContainer>
-        <Button $maxWidth="175px">Transcribe File</Button>
+        <Button $maxWidth="175px" onClick={() => setIsOpenModal(true)}>
+          Transcribe File
+        </Button>
       </MainPane.Frame>
       <MainPane.Frame>
         <MainPane.Metrics>

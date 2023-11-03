@@ -19,11 +19,14 @@ export const Title = styled.h2`
   font-weight: var(--fw-bold);
   line-height: 1.45;
 `
-export const Icon = styled.div`
+export const Icon = styled.button`
   margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: var(--clr-white);
 `
 export const Label = styled.p`
   color: var(--clr-black);

@@ -1,13 +1,17 @@
+import { useContext } from 'react'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 import Transcribe from '../components/transcribe'
 import Button from '../components/button'
+import { ModalContext } from '../context/modalContext'
 
 function TranscribeContainer() {
+  const { setIsOpenModal } = useContext(ModalContext)
+
   return (
     <Transcribe>
       <Transcribe.Frame>
         <Transcribe.Title>Transcribe File</Transcribe.Title>
-        <Transcribe.Icon>
+        <Transcribe.Icon onClick={() => setIsOpenModal(false)}>
           <CloseOutlinedIcon />
         </Transcribe.Icon>
       </Transcribe.Frame>

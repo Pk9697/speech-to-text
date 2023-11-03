@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Body, Container } from './styles/modal'
+import { ModalContext } from '../../context/modalContext'
 
 function Modal({ children, ...restProps }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpenModal, setIsOpenModal } = useContext(ModalContext)
   return (
-    isOpen && (
-      <Container>
-        <Body {...restProps}>{children}</Body>
+    isOpenModal && (
+      <Container onClick={() => setIsOpenModal(false)}>
+        <Body onClick={(e) => e.stopPropagation()} {...restProps}>
+          {children}
+        </Body>
       </Container>
     )
   )

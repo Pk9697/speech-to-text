@@ -25,7 +25,11 @@ Transcribe.Title = function TranscribeTitle({ children, ...restProps }) {
 }
 
 Transcribe.Icon = function TranscribeIcon({ children, ...restProps }) {
-  return <Icon {...restProps}>{children}</Icon>
+  return (
+    <Icon type="button" {...restProps}>
+      {children}
+    </Icon>
+  )
 }
 
 Transcribe.Label = function TranscribeLabel({ children, ...restProps }) {
