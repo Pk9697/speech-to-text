@@ -12,4 +12,9 @@ export const ButtonPrimary = styled.button`
   font-size: var(--fs-body);
   font-family: var(--ff-primary);
   max-width: ${(props) => (props.$maxWidth ? props.$maxWidth : 'none')};
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: red;
+  }
 `

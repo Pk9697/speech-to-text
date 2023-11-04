@@ -48,3 +48,5 @@ export const CheckBox = styled.input`
 export const Text = styled.p`
   color: var(--clr-table);
 `
+
+export const Link = styled.a``

@@ -3,9 +3,16 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 import Transcribe from '../components/transcribe'
 import Button from '../components/button'
 import { ModalContext } from '../context/modalContext'
+import { TranscribeContext } from '../context/transcribeContext'
 
 function TranscribeContainer() {
   const { setIsOpenModal } = useContext(ModalContext)
+
+  const {
+    transcribeState: { inProgress },
+    changeFile,
+    transcribe,
+  } = useContext(TranscribeContext)
 
   return (
     <Transcribe>
@@ -23,7 +30,7 @@ function TranscribeContainer() {
           </Transcribe.Select>
         </Transcribe.Frame>
         <Transcribe.Frame>
-          <Transcribe.File />
+          <Transcribe.File onChange={changeFile} />
         </Transcribe.Frame>
         <Transcribe.Frame $flexCol $gap="8px">
           <Transcribe.Label>Import from Link</Transcribe.Label>
@@ -35,7 +42,9 @@ function TranscribeContainer() {
         </Transcribe.Frame>
       </Transcribe.Frame>
       <Transcribe.Frame>
-        <Button>Transcribe File</Button>
+        <Button disabled={inProgress} onClick={transcribe}>
+          Transcribe File
+        </Button>
       </Transcribe.Frame>
     </Transcribe>
   )

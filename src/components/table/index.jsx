@@ -7,6 +7,7 @@ import {
   RowGroup,
   Text,
   Title,
+  Link,
 } from './styles/table'
 
 function Table({ children, ...restProps }) {
@@ -39,6 +40,10 @@ Table.CheckBox = function TableCheckBox({ ...restProps }) {
 
 Table.Text = function TableText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>
+}
+
+Table.Link = function TableLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>
 }
 
 export default Table

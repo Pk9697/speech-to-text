@@ -45,7 +45,7 @@ Transcribe.Option = function TranscribeOption({ children, ...restProps }) {
 }
 
 Transcribe.File = function TranscribeFile({ ...restProps }) {
-  return <File type="file" {...restProps} />
+  return <File type="file" accept="audio/*,video/*" {...restProps} />
 }
 
 Transcribe.Input = function TranscribeInput({ ...restProps }) {

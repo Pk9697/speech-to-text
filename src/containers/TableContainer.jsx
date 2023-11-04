@@ -1,6 +1,14 @@
+import { useContext } from 'react'
 import Table from '../components/table'
+import { TranscribeContext } from '../context/transcribeContext'
+import TableRowContainer from './TableRowContainer'
 
 function TableContainer() {
+  const {
+    transcribeState: { transcribedFiles = [] },
+  } = useContext(TranscribeContext)
+  // console.log({ transcribeState })
+
   return (
     <Table>
       <Table.Title>Recent Files</Table.Title>
@@ -29,75 +37,10 @@ function TableContainer() {
             <Table.Text>Action</Table.Text>
           </Table.Cell>
         </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Table.CheckBox />
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Peng Meeting</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Audio</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>20 min</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>1/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>5/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Download</Table.Text>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Table.CheckBox />
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Peng Meeting</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Audio</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>20 min</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>1/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>5/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Download</Table.Text>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Table.CheckBox />
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Peng Meeting</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Audio</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>20 min</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>1/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>5/5/2023</Table.Text>
-          </Table.Cell>
-          <Table.Cell>
-            <Table.Text>Download</Table.Text>
-          </Table.Cell>
-        </Table.Row>
+
+        {transcribedFiles.map((item, index) => (
+          <TableRowContainer key={`row-${index}`} item={item} />
+        ))}
       </Table.RowGroup>
     </Table>
   )
