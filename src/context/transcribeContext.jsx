@@ -12,12 +12,14 @@ const initialState = {
   text: null,
   error: null,
   inProgress: false,
+  saved: 0,
 }
 
 const SET_FILE = 'SET_FILE'
 const TRANSCRIBE_START = 'TRANSCRIBE_START'
 const TRANSCRIBE_SUCCESS = 'TRANSCRIBE_SUCCESS'
 const TRANSCRIBE_ERROR = 'TRANSCRIBE_ERROR'
+const INCREMENT_SAVED = 'INCREMENT_SAVED'
 
 function setFile(data) {
   return {
@@ -40,6 +42,11 @@ function transcribeError(data) {
   return {
     type: TRANSCRIBE_ERROR,
     payload: data,
+  }
+}
+function incrementSaved() {
+  return {
+    type: INCREMENT_SAVED,
   }
 }
 
@@ -87,6 +94,13 @@ function transcribeReducer(state, action) {
         text: null,
         error: action.payload,
         inProgress: false,
+      }
+    }
+
+    case INCREMENT_SAVED: {
+      return {
+        ...state,
+        saved: state.saved + 1,
       }
     }
 
@@ -138,9 +152,13 @@ function TranscribeContextProvider({ children }) {
       dispatch(transcribeError(data.error.message))
     }
   }
+
+  const incSaved = () => {
+    dispatch(incrementSaved())
+  }
   return (
     <TranscribeContext.Provider
-      value={{ transcribeState, changeFile, transcribe }}
+      value={{ transcribeState, changeFile, transcribe, incSaved }}
     >
       {children}
     </TranscribeContext.Provider>

@@ -6,4 +6,5 @@ export const Container = styled.div`
 `
 export const Pane = styled.div`
   flex: ${(props) => props.$weight};
+  max-width: ${(props) => (props.$maxWidth ? props.$maxWidth : 'none')};
 `

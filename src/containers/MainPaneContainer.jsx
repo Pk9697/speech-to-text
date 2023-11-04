@@ -7,9 +7,13 @@ import MainPane from '../components/mainPane'
 import Button from '../components/button'
 import TableContainer from './TableContainer'
 import { ModalContext } from '../context/modalContext'
+import { TranscribeContext } from '../context/transcribeContext'
 
 function MainPaneContainer() {
   const { setIsOpenModal } = useContext(ModalContext)
+  const {
+    transcribeState: { transcribedFiles = [], saved },
+  } = useContext(TranscribeContext)
 
   return (
     <MainPane>
@@ -25,7 +29,9 @@ function MainPaneContainer() {
             <FolderOutlinedIcon fontSize="small" />
           </MainPane.MetricsIcon>
           <MainPane.MetricsGroup>
-            <MainPane.MetricsNumber>100</MainPane.MetricsNumber>
+            <MainPane.MetricsNumber>
+              {transcribedFiles.length}
+            </MainPane.MetricsNumber>
             <MainPane.MetricsText>Uploaded Files</MainPane.MetricsText>
           </MainPane.MetricsGroup>
         </MainPane.Metrics>
@@ -34,7 +40,9 @@ function MainPaneContainer() {
             <TitleOutlinedIcon fontSize="small" />
           </MainPane.MetricsIcon>
           <MainPane.MetricsGroup>
-            <MainPane.MetricsNumber>50</MainPane.MetricsNumber>
+            <MainPane.MetricsNumber>
+              {transcribedFiles.length}
+            </MainPane.MetricsNumber>
             <MainPane.MetricsText>Transcribed</MainPane.MetricsText>
           </MainPane.MetricsGroup>
         </MainPane.Metrics>
@@ -43,7 +51,7 @@ function MainPaneContainer() {
             <BookmarkBorderOutlinedIcon fontSize="small" />
           </MainPane.MetricsIcon>
           <MainPane.MetricsGroup>
-            <MainPane.MetricsNumber>20</MainPane.MetricsNumber>
+            <MainPane.MetricsNumber>{saved}</MainPane.MetricsNumber>
             <MainPane.MetricsText>Saved</MainPane.MetricsText>
           </MainPane.MetricsGroup>
         </MainPane.Metrics>

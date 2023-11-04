@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <SplitScreen>
-        <SplitScreen.Pane $weight={1}>
+        <SplitScreen.Pane $maxWidth="272px" $weight={1}>
           <SidePaneContainer />
         </SplitScreen.Pane>
         <SplitScreen.Pane $weight={3}>
